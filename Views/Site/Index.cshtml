@@ -2,66 +2,67 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="bg-blue-600 text-white py-12">
-    <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold mb-4">Welcome to Our Website</h1>
-        <p class="text-xl">Discover amazing content and features!</p>
+<div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16">
+    <div class="container mx-auto text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-down">Welcome to Our Website</h1>
+        <p class="text-xl md:text-2xl font-light max-w-2xl mx-auto mb-8">Discover amazing content and features that will transform your experience!</p>
+        <a href="#features" class="inline-block bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">Explore Features</a>
     </div>
 </div>
 
-<div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-semibold mb-4">Feature 1</h2>
-            <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-semibold mb-4">Feature 2</h2>
-            <p class="text-gray-600">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-semibold mb-4">Feature 3</h2>
-            <p class="text-gray-600">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+<div id="features" class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Our Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <div class="text-3xl text-blue-600 mb-4">🚀</div>
+                <h3 class="text-xl font-semibold mb-3">Lightning Fast</h3>
+                <p class="text-gray-600">Experience blazing fast performance that will keep you ahead of the curve.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <div class="text-3xl text-blue-600 mb-4">🛡️</div>
+                <h3 class="text-xl font-semibold mb-3">Secure & Reliable</h3>
+                <p class="text-gray-600">Your data is safe with us. We prioritize security and reliability above all.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <div class="text-3xl text-blue-600 mb-4">🎨</div>
+                <h3 class="text-xl font-semibold mb-3">Beautiful Design</h3>
+                <p class="text-gray-600">Immerse yourself in a visually stunning and intuitive user interface.</p>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="bg-gray-100 py-12">
+<div class="py-16">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8 text-center">Latest Posts</h2>
+        <h2 class="text-3xl font-bold mb-10 text-center">Latest Posts</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/400x200" alt="Post 1" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Post Title 1</h3>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#" class="mt-4 inline-block text-blue-600 hover:underline">Read more</a>
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                    <img src="https://source.unsplash.com/random/800x600?@(new[] {"tech", "nature", "business"}[i])" alt="Post @(i + 1)" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">@(new[] {"The Future of Technology", "Embracing Sustainability", "Mastering Productivity"}[i])</h3>
+                            <p class="text-gray-600 mb-4">@(new[] {"Explore the cutting-edge innovations shaping our digital landscape.", "Discover how small changes can lead to a more sustainable future.", "Learn the secrets to boosting your productivity and achieving more."}[i])</p>
+                        </div>
+                        <a href="#" class="text-blue-600 font-semibold hover:underline mt-auto">Read more →</a>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/400x200" alt="Post 2" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Post Title 2</h3>
-                    <p class="text-gray-600">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#" class="mt-4 inline-block text-blue-600 hover:underline">Read more</a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/400x200" alt="Post 3" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Post Title 3</h3>
-                    <p class="text-gray-600">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="mt-4 inline-block text-blue-600 hover:underline">Read more</a>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>
 
-<div class="bg-blue-100 py-12">
+<div class="bg-gray-100 py-16">
     <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">Ready to get started?</h2>
-        <p class="text-xl mb-8">Join our community today and experience the difference!</p>
-        <a href="#" class="bg-blue-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300">Sign Up Now</a>
+        <h2 class="text-3xl font-bold mb-6">Ready to get started?</h2>
+        <p class="text-lg mb-8 max-w-2xl mx-auto">Join our thriving community today and unlock a world of possibilities!</p>
+        <a href="#" class="bg-blue-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300 inline-flex items-center">
+            Sign Up Now
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+        </a>
     </div>
 </div>
